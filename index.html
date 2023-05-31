@@ -365,20 +365,33 @@
                                                     window.location.replace('https://www.rocketauto.com/');
                                                 })
 
-                                            var custom_data = {};
+                                           
 
-                                            $(".custom-data").change(function() {
-                                                console.log(this.id);
-                                                custom_data[this.id] = this.value;
-                                                _ps('set', 'custom_data', custom_data);
-                                                /*_ps("send", "updated");*/
+/*Render Data allows for information to render on the document in real-time*/
 
-                                            });
+    var render_data = {
+    };
+  
+/*Custom Data captures unique metadata to be included on the acceptance in clickwrap */
+  $(".custom-data").change(function(){
+    console.log(this.id);
+    console.log(this);
+    render_data[this.id] = this.value;
+/*This retreives the input data from the HTML*/
+    _ps("embedded-oukgwcip:retrieveHTML", render_data);
+  });
+/*Loads the correct clickwrap account*/  
+  _ps("create", "2893ae3f-9de6-43f7-b4cc-f49a4b1681c2", { dynamic: true });
 
+/* This loads the clickwrap group! Signer_id_selector below is how CW identifies the counterparty signer.*/
+  
+  _ps('load', 'embedded-oukgwcip', { container_selector: "contracts", signer_id_selector: "email" });
+  
+  _ps.on('valid', setCustomData());
+  
+  
+  </script>
 
-                                            _ps("create", "2893ae3f-9de6-43f7-b4cc-f49a4b1681c2");
-                                            _ps("load", "embedded-oukgwcip", { container_selector: "contracts", signer_id_selector: "email" });
-                                            </script>
                                             <style type="text/css">
                                             .css-78jar2>:not(style)+:not(style) {
                                                 margin-top: 0px !important;
