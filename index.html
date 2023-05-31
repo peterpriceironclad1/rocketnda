@@ -368,13 +368,6 @@
 -->
                                             </div>
     <script type="text/javascript">
-    document.getElementById('petersform').addEventListener('submit',
-    function(e) {
-     console.log("Submit Success!");
-e.preventDefault();
-window.location.replace('https://www.rocketauto.com/');
-})
-
                                            
 
 /*Render Data allows for information to render on the document in real-time*/
@@ -469,7 +462,7 @@ window.location.replace('https://www.rocketauto.com/');
 
 
 <div id="spacingclass1" class="testingtest">
-    <button class="MuiButtonBase-root MuiButton-root rkt-Button rkt-Button--primary rkt-Button--large false MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-disableElevation MuiButton-root rkt-Button rkt-Button--primary rkt-Button--large false MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-disableElevation css-1a7srsr anotherclass" tabindex="0" type="submit" data-analytics-click="get-started-coming-soon:Sign Up">Sign Up<span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+    <button class="MuiButtonBase-root MuiButton-root rkt-Button rkt-Button--primary rkt-Button--large false MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-disableElevation MuiButton-root rkt-Button rkt-Button--primary rkt-Button--large false MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-disableElevation css-1a7srsr anotherclass" tabindex="0" type="submit" onclick="submitContract()" data-analytics-click="get-started-coming-soon:Sign Up">Sign Up<span class="MuiTouchRipple-root css-w0pj6f"></span></button>
 </div>
 <style type="text/css">
     
@@ -486,6 +479,21 @@ window.location.replace('https://www.rocketauto.com/');
     }
 
 </style>
+
+<script type="text/javascript">
+    
+    document.getElementById('petersform').addEventListener('submit',
+    function(e) {
+     console.log("Submit Success!");
+e.preventDefault();
+window.location.replace('https://www.rocketauto.com/');
+})
+
+function submitContract() {
+      window.location.href = "https://www.rocketauto.com/";
+    }
+
+</script>
 
 <!-- end of the table -->
 
